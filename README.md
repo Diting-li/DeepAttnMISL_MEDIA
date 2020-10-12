@@ -13,7 +13,17 @@ Multiple Instance Learning Networks](https://www.sciencedirect.com/science/artic
 
 ### Data
 Need to specify the path of data label and image features
-Data labels are in csv format. Image features can be saved in npz format with clustering label, etc. More can be found in dataset definition.
+Data labels are in csv format. Image features can be saved in npz format with clustering label, etc. 
+
+For example, patient 10000 has 100 sampled patches from at least 1 WSI, should stored as 10000.npz with the following information:
+1. 'vgg_features': vgg features of each patch, so 100*L
+2. 'pid': 10000, 1
+3. 'time': OS time, 1
+4. 'status': OS status, 1
+5. 'img_path': path of each patch, for example, './10000/1.jpg', 100*1
+6. 'cluster_num': cluster id of each patch. 100*1
+
+More can be found in dataset definition.
 
 #### Input file format
 
